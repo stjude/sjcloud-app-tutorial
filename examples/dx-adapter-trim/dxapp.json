@@ -1,0 +1,73 @@
+{
+  "name": "dx-adapter-trim",
+  "title": "Cutadapt adapter trimming",
+  "summary": "Trim adapter sequence from sequencing data",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "read_one",
+      "label": "First read in pair",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fastq", "*.fq"
+      ],
+      "help": ""
+    },
+    {
+      "name": "read_two",
+      "label": "Second read in pair",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fastq", "*.fq"
+      ],
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "trimmed_read_one",
+      "label": "Adapter trimmed read one",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "trimmed_read_two",
+      "label": "Adapter trimmed read two",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "bash",
+    "file": "src/dx-adapter-trim.sh",
+    "distribution": "Ubuntu",
+    "release": "16.04"
+  },
+  "access": {
+    "project": "CONTRIBUTE",
+    "network": ["*"]
+  },
+  "regionalOptions": {
+    "azure:westus": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "azure:mem2_ssd1_x4"
+        }
+      }
+    }
+  }
+}
