@@ -1,0 +1,75 @@
+{
+  "name": "dx-bwa-mem",
+  "title": "BWA-MEM alignment",
+  "summary": "Align sequencing reads to a genome using BWA-MEM",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "genome",
+      "label": "Genome to align against",
+      "class": "string",
+      "optional": false,
+      "help": "",
+      "choices": ["GRCh37-lite", "GRCh38_no_alt"]
+    },
+    {
+      "name": "read_one_fastq",
+      "label": "FastQ file for read one",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fq", "*.fastq"
+      ],
+      "help": ""
+    },
+    {
+      "name": "read_two_fastq",
+      "label": "FastQ file for read two",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fq", "*.fastq"
+      ],
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "output_bam",
+      "label": "Aligned BAM file",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "bash",
+    "release": "16.04",
+    "distribution": "Ubuntu",
+    "file": "src/dx-bwa-mem.sh"
+  },
+  "access": {
+    "allProjects": "VIEW",
+    "project": "CONTRIBUTE",
+    "network": [
+      "*"
+    ]
+  },
+  "regionalOptions": {
+    "azure:westus": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "azure:mem2_ssd1_x4"
+        }
+      }
+    }
+  }
+}
