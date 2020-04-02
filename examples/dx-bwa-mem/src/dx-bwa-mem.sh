@@ -76,7 +76,7 @@ main() {
     export PYTHONPATH=$pypath
     export PATH=$orig_path
 
-    output_bam=$(dx upload *.bam --brief)
+    output_bam=$(dx upload out.bam --brief)
 
     # The following line(s) use the utility dx-jobutil-add-output to format and
     # add output variables to your job's output as appropriate for the output
