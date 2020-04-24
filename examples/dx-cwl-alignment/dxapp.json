@@ -1,0 +1,96 @@
+{
+  "name": "dx-cwl-alignment",
+  "title": "Align reads using a CWL workflow",
+  "summary": "dx-cwl-alignment",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "genome",
+      "label": "Genome to align against",
+      "class": "string",
+      "optional": false,
+      "help": "",
+      "choices": ["GRCh37-lite", "GRCh38_no_alt"]
+    },
+    {
+      "name": "fastq_one",
+      "label": "FastQ file for read one",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "fastq_two",
+      "label": "FastQ file for read two",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "bam",
+      "label": "Aligned BAM file",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "bam_index",
+      "label": "BAI file",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "flagstat",
+      "label": "Samtools flagstat",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "bash",
+    "release": "16.04",
+    "version": "1",
+    "distribution": "Ubuntu",
+    "file": "src/dx-cwl-alignment.sh",
+    "execDepends": [
+      {"name": "cwlref-runner",
+       "package_manager": "pip3"}
+    ]
+  },
+  "access": {
+    "network": ["*"],
+    "allProjects": "VIEW",
+    "project": "CONTRIBUTE"
+  },
+  "regionalOptions": {
+    "azure:westus": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "azure:mem2_ssd1_x16"
+        }
+      }
+    }
+  }
+}
