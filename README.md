@@ -17,6 +17,7 @@ For accessing St. Jude next generation sequencing data and writing cloud applica
 * `dx-adapter-trim` - Example application that uses cutadapt to trim sequencing adapters. This app demonstrates providing data to the app via the resources directory. Note this should primarily be used for small, app-specific resources.
 * `dx-bam-to-fastq` - Example application that extracts FastQ files from aligned BAMs. This app demonstrates returning an array of files as output.
 * `dx-bwa-mem` - Example application that aligns FastQ files to a reference genome using BWA-MEM. Demonstrates pulling reference files from the common St. Jude Cloud Reference Data project dynamically based on user input for use in the application.
+* `dx-cwl-alignment` - Example application that aligns FastQ files to a reference genome, sorts the resulting BAM, indexes the BAM, and then produces a flagstat. The pipeline is orchestrated using CWL. The CWL workflow is run in parallel on a single node using multiple cores.
 * `dx-fastqc-example-app` - Example application used in the [Data Guides > Creating a Cloud Application](https://www.stjude.cloud/docs/guides/data/creating-a-cloud-app/) section of the St. Jude Cloud documentation.
 
 ## Feedback
