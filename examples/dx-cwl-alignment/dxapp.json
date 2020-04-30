@@ -58,7 +58,7 @@
       "label": "Samtools flagstat",
       "class": "file",
       "patterns": [
-        "*"
+        "*.flagstat.txt"
       ],
       "help": ""
     }
