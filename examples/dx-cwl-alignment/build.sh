@@ -40,7 +40,7 @@ set -ex
 if [ "$no_docker_build" == "" ]
 then 
   docker build -t bio-base .
-  docker tag bio-base bio-base:$VERS .
+  docker tag bio-base bio-base:$VERS
 fi
 
 if [ -d "resources/docker" ]

@@ -19,7 +19,7 @@
       "class": "file",
       "optional": false,
       "patterns": [
-        "*"
+        "*.fq", "*.fastq"
       ],
       "help": ""
     },
@@ -29,7 +29,7 @@
       "class": "file",
       "optional": false,
       "patterns": [
-        "*"
+        "*.fq", "*.fastq"
       ],
       "help": ""
     }
@@ -80,7 +80,7 @@
     ]
   },
   "access": {
-    "network": ["*"],
+    "network": [ "pypi.org", "registry-1.docker.io", "production.cloudflare.docker.com" ],
     "allProjects": "VIEW",
     "project": "CONTRIBUTE"
   },
