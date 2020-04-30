@@ -40,7 +40,7 @@
       "label": "Aligned BAM file",
       "class": "file",
       "patterns": [
-        "*"
+        "*.bam"
       ],
       "help": ""
     },
