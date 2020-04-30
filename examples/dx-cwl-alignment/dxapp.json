@@ -49,7 +49,7 @@
       "label": "BAI file",
       "class": "file",
       "patterns": [
-        "*"
+        "*.bam.bai"
       ],
       "help": ""
     },
