@@ -22,5 +22,3 @@ RUN conda update -n base -c defaults conda -y && \
     conda clean --all -y
 
 RUN pip install --no-cache-dir ngsderive
-
-#COPY --from=fqlib-builder /opt/fqlib/bin/fq /usr/local/bin/
